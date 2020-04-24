@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Form from './Form';
 
 function App() {
-  const [members, setMembers] = useState(['Adam']);
+  const [memberList, setMemberList] = useState([]);
 
   return (
     <div className="App">
       <h1>Team Members</h1>
+      <Form memberList={memberList} setMemberList={setMemberList} />
       <ul>
-        {members.map(member => <li key={member}>{member}</li>)}
+        {memberList.map(member => <li key={member.name}>{member.name}</li>)}
       </ul>
     </div>
   );
