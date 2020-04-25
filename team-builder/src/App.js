@@ -9,9 +9,15 @@ function App() {
     <div className="App">
       <h1>Team Members</h1>
       <Form memberList={memberList} setMemberList={setMemberList} />
-      <ul>
-        {memberList.map(member => <li key={member.name}>{member.name}</li>)}
-      </ul>
+      <div className="member-list">
+        {memberList.map(member => (
+          <div className="member" key={member.name}>
+            <h2>{member.name}</h2>
+            <p>{member.email}</p>
+            <p className="role">{member.role}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
