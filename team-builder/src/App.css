@@ -1,0 +1,48 @@
+.App {
+  text-align: center;
+}
+
+.member-list {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.member {
+  width: 250px;
+  margin: 0 auto 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.role {
+  font-style: italic;
+}
+
+p {
+  margin: 0;
+}
+
+form {
+  width: 20%;
+  margin: 0 auto 20px;
+  padding: 25px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+button {
+  color: white;
+  background-color: blue;
+  margin-top: 10px;
+}
+
+.edit-btn {
+  background-color: gray;
+}
