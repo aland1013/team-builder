@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Form = ({ memberList, setMemberList, memberToEdit }) => {
+const Form = ({ memberList, setMemberList, memberToEdit, editMember }) => {
   const [member, setMember] = useState({ name: '', email: '', role: '' });
 
   const handleChanges = (e) => {
@@ -9,7 +9,12 @@ const Form = ({ memberList, setMemberList, memberToEdit }) => {
 
   const submitForm = (e) => {
     e.preventDefault();
-    setMemberList([...memberList, member]);
+    if(memberToEdit) {
+      editMember(member);
+    } else {
+      setMemberList([...memberList, member]);
+    }
+    
     setMember({ name: '', email: '', role: '' });
   }
 

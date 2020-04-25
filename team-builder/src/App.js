@@ -6,6 +6,12 @@ function App() {
   const [memberList, setMemberList] = useState([]);
   const [memberToEdit, setMemberToEdit] = useState(null);
 
+  const editMember = (member) => {
+    const newList = memberList.filter(item => item.name !== memberToEdit.name);
+    setMemberList([...newList, member]);
+    setMemberToEdit(null);
+  }
+
   return (
     <div className="App">
       <h1>Team Members</h1>
@@ -13,6 +19,7 @@ function App() {
         memberList={memberList} 
         setMemberList={setMemberList} 
         memberToEdit={memberToEdit} 
+        editMember={editMember}
       />
       <div className="member-list">
         {memberList.map(member => (
