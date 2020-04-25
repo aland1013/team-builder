@@ -42,3 +42,7 @@ button {
   background-color: blue;
   margin-top: 10px;
 }
+
+.edit-btn {
+  background-color: gray;
+}

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const Form = ({ memberList, setMemberList }) => {
+const Form = ({ memberList, setMemberList, memberToEdit }) => {
   const [member, setMember] = useState({ name: '', email: '', role: '' });
 
   const handleChanges = (e) => {
@@ -12,6 +12,12 @@ const Form = ({ memberList, setMemberList }) => {
     setMemberList([...memberList, member]);
     setMember({ name: '', email: '', role: '' });
   }
+
+  useEffect(() => {
+    if(memberToEdit) {
+      setMember(memberToEdit);
+    }
+  }, [memberToEdit]);
 
   return (
     <form onSubmit={submitForm}>
